@@ -1,11 +1,33 @@
 import javax.swing.*;
+import java.util.Scanner;
 
 public class lalala {
     public static void main (String[] args){
-        String num1=JOptionPane.showInputDialog("introduce numero");
-        double num20=Double.parseDouble(num1);
-        System.out.print(num20);
-        System.out.printf("%1.2f",Math.sqrt(num20));
+     Scanner scaner= new Scanner(System.in);
+        System.out.println("elige una opcion: \n1: cuadrado \n2: rectanfulo \n3: triangulo \n4: circulo");
+     int figura = scaner.nextInt();
+     switch (figura){
+         case 1:
+             int lado= Integer.parseInt(JOptionPane.showInputDialog("introduce lado"));
+             System.out.println("el area del cuarado es"+ Math.pow(lado,2));
+             break;
+         case 2:
+             int base= Integer.parseInt(JOptionPane.showInputDialog("introduce base"));
+             int altura= Integer.parseInt(JOptionPane.showInputDialog("introduce altura"));
+             System.out.println("el area del rectangulo es"+base*altura);
+break;
+         case 3:
+              base= Integer.parseInt(JOptionPane.showInputDialog("introduce base"));
+              altura= Integer.parseInt(JOptionPane.showInputDialog("introduce altura"));
+             System.out.println("el area del triangulo es "+base*altura/2);
+break;
+         case 4:
+             int radio= Integer.parseInt(JOptionPane.showInputDialog("introduce radio"));
+             System.out.print("el radio es ");
+             System.out.printf("%1.2f",Math.PI*(Math.pow(radio,2)));
+
+          break;
+     }
 
 
     }
