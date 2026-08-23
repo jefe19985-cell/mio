@@ -2,23 +2,26 @@ package practicasPOO;
 
 public class coche {
     int rueda;
-    int peso;
+    int pesoTotal;
+    int pesoPlataforma;
     int ancho;
     int largo;
+    int motor;
     String color;
     boolean asientoscuero, aclimatizador;
 
 
     public coche() {
         rueda=4;
-        peso=500;
+        pesoPlataforma=500;
         ancho=2;
         largo=4;
+        motor=1600;
 
 
     }
     public String damedatosgenerales(){
-        return rueda+"  " + "tiene" + peso + ancho + largo;
+        return rueda+"  " + "tiene" + pesoPlataforma + ancho + largo;
     }
 
     public String dimecolor() {
@@ -30,7 +33,7 @@ public class coche {
     }
 
     public void setAsientoscuero(String asientoscuero){
-        if (asientoscuero=="si"){
+        if (asientoscuero.equalsIgnoreCase("si")){
             this.asientoscuero=true;
         }else{
             this.asientoscuero=false;
@@ -43,4 +46,44 @@ public class coche {
             return "el coche no tiene asientos de cueri";
         }
     }
+
+    public void setAclimatizador(String aclimatizador) {
+        if (aclimatizador.equalsIgnoreCase("si")) {
+
+            this.aclimatizador=true;
+        }else {
+            this.aclimatizador=false;
+
+        }
+    }
+    public String dimeacimatizador(){
+        if (aclimatizador==true){
+            return "tiene aclimatizador";
+        }else {
+            return "no tiene";
+        }
+    }
+    public  String dimePesoCoche(){
+        int pesoCrarooseria=500;
+        pesoTotal=pesoPlataforma+pesoCrarooseria;
+        if (asientoscuero==true){
+            pesoTotal=pesoTotal+50;
+        }if (aclimatizador==true){
+            pesoTotal=pesoTotal+20;
+
+        }
+        return "tiene"+pesoTotal;
+    }
+    public int precioCoche(){
+        int preciofinal=100000;
+        if (asientoscuero==true){
+            preciofinal+=2000;
+
+        }if (aclimatizador==true){
+            preciofinal+=1500;
+        }
+        return preciofinal;
+    }
+
+
 }
