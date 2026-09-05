@@ -10,6 +10,9 @@ sueldo=sueld;
 GregorianCalendar calendario=new GregorianCalendar(año,mes-1,dia);
 altaContrato=calendario.getTime();
     }
+    public empleado(String nom){
+this(nom,3000,2000,1,1);
+    }
 
     public String getNombre() {
         return nombre;

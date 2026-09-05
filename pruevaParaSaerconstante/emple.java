@@ -16,6 +16,11 @@ public class emple {
 
 
     }
+
+    public static String dameidedigiente(){
+        return "el idsiguiente es:"+idsiguiente;
+
+    }
     private int   Id;
     private static int idsiguiente=1;
     private  final String nombre;
